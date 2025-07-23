@@ -15,7 +15,7 @@ amount.oninput = () => {
 
 // Formata o valor no padrão BRL (Real Brasileiro).
 function formatCurrencyBRL(value){
-    value = value.toStringLocale("pt-BR", {
+    value = value.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
     })
