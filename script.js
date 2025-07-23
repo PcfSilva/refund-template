@@ -25,6 +25,18 @@ function formatCurrencyBRL(value){
     return value
 }
 
+
 form.onsubmit = (event) => {
     event.preventDefault()
+
+    // Cria um objeto com as informações da nova despesa.
+    const newExpense = {
+        id: new Date().getTime(),
+        expense: expense.value,
+        category_id: category.value,
+        category_name: category.options[category.selectedIndex].text,
+        amount: amount.value,
+        created_at: new Date(),
+    }
+    console.log(newExpense)
 }
