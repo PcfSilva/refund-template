@@ -67,12 +67,17 @@ function expenseAdd(newExpense){
         // Cria a categoria da despesa.
         const expenseCategory = document.createElement("span")
         expenseCategory.textContent = newExpense.category_name
-
+        
         // Adiciona nome e categoria na div das informações das despesas.
         expenseInfo.append(expenseName, expenseCategory)
 
+        // Cria o valor das despesas.
+        const expenseAmount = document.createElement("span")
+        expenseAmount.classList.add("expense-amount")
+        expenseAmount.innerHTML = `<small>R$</small>${newExpense.amount.toUpperCase().replace("R$", "")}`
+
         // Adiciona as informações no item.
-        expenseItem.append(expenseIcon, expenseInfo)
+        expenseItem.append(expenseIcon, expenseInfo, expenseAmount)
 
         // Adiciona as informações a lista.
         expenseList.append(expenseItem)
